@@ -1,0 +1,80 @@
+const express = require('express')
+const router = express.Router({mergeParams:true})
+
+const mongoose = require('mongoose')
+const Activity = mongoose.model('Activity')
+const Venue = mongoose.model('Venue')
+const { book } = require("../models/bookings");
+
+router.post("/addActivity", (req, res)=>{
+    const {name, info,timeslot,availability,chargeable} = req.body
+    if(!name || !info || !timeslot || !availability || ! chargeable){
+        return res.send({"error":"please enter all the details"})
+    }
+    console.log({_id:req.params.venueid})
+    Venue.find({_id:req.params.venueid})
+    .then((venue)=>{
+        if (venue.length===0){
+            return res.send({"error":"venue doesn't exists"})
+        }
+        const newActivity = new Activity({
+            name: name,
+            venueid: req.params.venueid,
+            info: info,
+            timeslot: timeslot,
+            availability: availability,
+            chargeable:chargeable
+        })
+        newActivity.save()
+        .then((newActivity) => {
+            return res.json({"message":"venue details saved successfully",activity:{newActivity}})
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
+router.delete("/delete/:activityid", (req, res) => {
+    Activity.findByIdAndDelete({_id:req.params.activityid})
+      .then((activity) => {
+        if (!activity) {
+          return res.status(404).json({ error: "activity not found" });
+        }
+        return res.status(200).json({ message: "activity deleted successfully" });
+      })
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({ error: "Internal server error" });
+      });
+  });
+
+router.get("/", (req, res) => {
+    Activity.find({venueid:req.params.venueid})
+    .then((activities) => {
+        console.log(req.params.venueid);
+        if (!activities){
+            return res.status(200).json({"404":"activities not available"})
+        }
+        return res.send({activities:activities})
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
+router.get("/:activityid", (req,res) => {
+    Activity.find({_id:req.params.activityid})
+    .then((activity) => {
+        if (!activity){
+            return res.status(200).json({"error":"non existing activity"})
+        }
+        return res.status(200).json({"activity":activity})
+    })
+})
+
+
+module.exports = router

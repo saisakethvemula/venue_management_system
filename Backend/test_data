@@ -1,0 +1,55 @@
+Venue.insertMany([{
+        "name": "Basketball Court at YMCA",
+        "venueid": "67890",
+        "city": "San Francisco",
+        "address": "123 Main Street",
+        "state": "CA",
+        "sports": ["basketball"],
+        "rent": true,
+        "images": ["https://example.com/basketballcourt1.jpg", "https://example.com/basketballcourt2.jpg"]
+      }
+      ,
+      {
+        "name": "Tennis Court at the Park",
+        "venueid": "24680",
+        "city": "Los Angeles",
+        "address": "Park Avenue",
+        "state": "CA",
+        "sports": ["tennis"],
+        "rent": false,
+        "images": ["https://example.com/tenniscourt1.jpg", "https://example.com/tenniscourt2.jpg"]
+      }
+      ,
+      {
+        "name": "Volleyball Beach",
+        "venueid": "13579",
+        "city": "Miami",
+        "address": "Beachside Avenue",
+        "state": "FL",
+        "sports": ["volleyball"],
+        "rent": true,
+        "images": ["https://example.com/volleyballbeach1.jpg", "https://example.com/volleyballbeach2.jpg"]
+      }
+      ,
+      {
+        "name": "Football Field at High School",
+        "venueid": "11223",
+        "city": "Chicago",
+        "address": "High School Road",
+        "state": "IL",
+        "sports": ["football"],
+        "rent": false,
+        "images": ["https://example.com/footballfield1.jpg", "https://example.com/footballfield2.jpg"]
+      }
+      ,
+      {
+        "name": "Baseball Diamond at Local Park",
+        "venueid": "99001",
+        "city": "Austin",
+        "address": "Parkside Boulevard",
+        "state": "TX",
+        "sports": ["baseball"],
+        "rent": true,
+        "images": ["https://example.com/baseballdiamond1.jpg", "https://example.com/baseballdiamond2.jpg"]
+      }
+    ])

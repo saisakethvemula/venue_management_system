@@ -1,0 +1,2 @@
+1. While designing a page, create the corresponding js file in the pages folder.
+2. All common components(like button,header designs) are to be stored in components folder.

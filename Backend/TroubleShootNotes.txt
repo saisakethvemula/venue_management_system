@@ -1,0 +1,6 @@
+To kill the process that runs on the port number
+
+Step 1: run the command "lsof -i TCP:<PORT NUMBER>
+After this step, you will get the process ID of the task that runs at the PORT NUMBER. Use that PID to kill the process
+
+Step 2: kill -9 <PID>
