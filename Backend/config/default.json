@@ -1,5 +1,5 @@
 {
-    "mongoURI":"mongodb+srv://simply:book@simplybook.agvwvam.mongodb.net/?retryWrites=true&w=majority",
-    "JWT_SECRET" :"hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe",
-    "STRIPE_SECRET": "sk_test_51Mp1c8AFaWevwHWUZxE6ff6SjzEBTAvo5xnQASoorAmM4U13Iq2cCZJgtBC9EmKCOWAbKootnDkujRK93gbJObca00oc2jUVJg"
+    "mongoURI":"",
+    "JWT_SECRET" :"",
+    "STRIPE_SECRET": ""
 }
