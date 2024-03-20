@@ -11,7 +11,7 @@ const bcrypt = require("bcryptjs")
 
 router.post("/signup",(req, res) => {
     // console.log(req.body)
-    const {name, email, password, logintype,uid} = req.body
+    const {name, email, password, logintype, uid} = req.body
     if (logintype == "email"){
         if (!name || !email || !password){
             return res.status(200).json({"error":"please send all data"})

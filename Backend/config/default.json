@@ -1,5 +1,5 @@
 {
-    "mongoURI":"",
+    "mongoURI":"mongodb+srv://sakethsaivemula:C34MrMochnElvK2J@cluster0.vthhlus.mongodb.net/",
     "JWT_SECRET" :"",
     "STRIPE_SECRET": ""
 }

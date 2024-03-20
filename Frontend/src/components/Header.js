@@ -25,7 +25,7 @@ export default function NavBar(props) {
         const path = history.pathname.slice(1);
         const homeRoute = path.split('/')[0];
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser.uid);
+            setUser(currentUser?.uid);
           });
         dispatch({ type: "changeTab", payload: homeRoute })
         if(user){
